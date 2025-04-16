@@ -65,6 +65,8 @@ sudo systemctl restart nodered.service
 
 ## 🧪 How to Use
 
+![Hailo Detection UI](assets/1.png)
+
 ### 1️⃣ Install Dependencies
 
 Use the `hailo-setup` node. This will install the necessary Python packages, Flask server, and set up the environment.
@@ -75,6 +77,7 @@ Use the `hailo-setup` node. This will install the necessary Python packages, Fla
 
 ### 2️⃣ Detect Objects
 
+![Hailo Detection UI](assets/2.png)
 Use the `hailo-detect` node.
 
 - `Model (.hef) path`: Path to the Hailo model
