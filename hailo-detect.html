@@ -1,0 +1,45 @@
+<!-- JS to register the node -->
+<script type="text/javascript">
+    RED.nodes.registerType('hailo-detect', {
+        category: 'Hailo',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            modelPath: {value:""},
+            labelFile: {value:""},
+            mp4File: {value:""}
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "file.png",
+        label: function() {
+            return this.name || "hailo-detect";
+        }
+    });
+</script>
+
+<!-- This part is ESSENTIAL: Template UI definition -->
+<script type="text/html" data-template-name="hailo-detect">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-modelPath"><i class="fa fa-cogs"></i> Model Path</label>
+        <input type="text" id="node-input-modelPath" placeholder="/path/to/model.har">
+    </div>
+    <div class="form-row">
+        <label for="node-input-labelFile"><i class="fa fa-file"></i> Label File</label>
+        <input type="text" id="node-input-labelFile" placeholder="/path/to/labels.txt">
+    </div>
+    <div class="form-row">
+        <label for="node-input-mp4File"><i class="fa fa-video-camera"></i> MP4 File Path</label>
+        <input type="text" id="node-input-mp4File">
+    </div>
+
+</script>
+
+<!-- Optional: Help text shown when hovering (?) icon -->
+<script type="text/html" data-help-name="hailo-detect">
+    <p>This node performs object detection using a Hailo model and label file.</p>
+</script>

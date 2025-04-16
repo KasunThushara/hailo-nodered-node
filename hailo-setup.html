@@ -1,0 +1,20 @@
+<script type="text/javascript">
+    RED.nodes.registerType('hailo-setup', {
+        category: 'Hailo',
+        color: '#c2e0ff',
+        defaults: {
+            name: { value: "" }
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "fa-cogs",
+        label: function () {
+            return this.name || "hailo-setup";
+        }
+    });
+</script>
+
+<div class="form-row">
+    <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+    <input type="text" id="node-input-name">
+</div>
