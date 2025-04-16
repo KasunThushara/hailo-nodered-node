@@ -1,0 +1,171 @@
+[
+    {
+        "id": "db937d9aed40e4c6",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "06c7bd955d226620",
+        "type": "inject",
+        "z": "db937d9aed40e4c6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 160,
+        "wires": [
+            [
+                "84eb9f899340c24c"
+            ]
+        ]
+    },
+    {
+        "id": "a8ede624664091e9",
+        "type": "debug",
+        "z": "db937d9aed40e4c6",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "4feb7aa0db5c8fca",
+        "type": "hailo-setup",
+        "z": "db937d9aed40e4c6",
+        "name": "",
+        "x": 450,
+        "y": 60,
+        "wires": [
+            [
+                "cb01174a3f200645"
+            ]
+        ]
+    },
+    {
+        "id": "0baf8d3bb1c4a316",
+        "type": "inject",
+        "z": "db937d9aed40e4c6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 240,
+        "y": 60,
+        "wires": [
+            [
+                "4feb7aa0db5c8fca"
+            ]
+        ]
+    },
+    {
+        "id": "cb01174a3f200645",
+        "type": "debug",
+        "z": "db937d9aed40e4c6",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "84eb9f899340c24c",
+        "type": "hailo-detect",
+        "z": "db937d9aed40e4c6",
+        "name": "",
+        "modelPath": "/home/pi/hailo_nodered_support/yolov8n.hef",
+        "labelFile": "/home/pi/hailo_nodered_support/coco.txt",
+        "mp4File": "camera",
+        "x": 250,
+        "y": 260,
+        "wires": [
+            [
+                "a8ede624664091e9",
+                "04cd8d04db98f9f0"
+            ]
+        ]
+    },
+    {
+        "id": "04cd8d04db98f9f0",
+        "type": "ui_template",
+        "z": "db937d9aed40e4c6",
+        "group": "7fe984259329fb2a",
+        "name": "",
+        "order": 0,
+        "width": "12",
+        "height": "10",
+        "format": "<div style=\"text-align: center;\">\n    <img src=\"http://192.168.8.133:5001/video_feed\" style=\"width: 100%; max-width: 100%; height: auto; border: 2px solid #ccc; border-radius: 10px;\" />\n    \n    <br><br>\n    <button onclick=\"fetch('http://192.168.8.133:5001/stop')\" style=\"padding: 10px 20px; font-size: 16px; background-color: #ff4444; color: white; border: none; border-radius: 5px; cursor: pointer;\">\n        Stop\n    </button>\n</div>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 500,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7fe984259329fb2a",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "f30d5ea80d4a8670",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f30d5ea80d4a8670",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
