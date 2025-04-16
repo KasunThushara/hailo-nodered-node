@@ -65,7 +65,7 @@ sudo systemctl restart nodered.service
 
 ## 🧪 How to Use
 
-![Hailo Detection UI](assets/1.png)
+![Hailo Detection UI](assets/1.PNG)
 
 ### 1️⃣ Install Dependencies
 
@@ -77,7 +77,7 @@ Use the `hailo-setup` node. This will install the necessary Python packages, Fla
 
 ### 2️⃣ Detect Objects
 
-![Hailo Detection UI](assets/2.png)
+![Hailo Detection UI](assets/2.PNG)
 Use the `hailo-detect` node.
 
 - `Model (.hef) path`: Path to the Hailo model
