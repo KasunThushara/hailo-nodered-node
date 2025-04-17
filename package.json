@@ -7,7 +7,9 @@
   "node-red": {
     "nodes": {
       "hailo-detect": "hailo-detect.js",
-      "hailo-setup": "hailo-setup.js"
+      "hailo-setup": "hailo-setup.js",
+      "hailo-pose": "hailo-pose.js"
+      
       
     }
   }
