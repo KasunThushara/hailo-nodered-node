@@ -1,0 +1,37 @@
+<script type="text/javascript">
+    RED.nodes.registerType('hailo-pose', {
+        category: 'Hailo',
+        color: '#ffc0cb',
+        defaults: {
+            name: { value: "" },
+            modelPath: { value: "" },
+            sourceInput: { value: "" }
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "file.png",
+        label: function () {
+            return this.name || "hailo-pose";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="hailo-pose">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-modelPath"><i class="fa fa-cogs"></i> Model Path (.har)</label>
+        <input type="text" id="node-input-modelPath" placeholder="/path/to/model.har">
+    </div>
+    <div class="form-row">
+        <label for="node-input-sourceInput"><i class="fa fa-video-camera"></i> Source (mp4 path or 'camera')</label>
+        <input type="text" id="node-input-sourceInput" placeholder="camera or /path/to/file.mp4">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="hailo-pose">
+    <p>This node runs pose estimation using a Hailo model.</p>
+    <p>Provide a model (.har) and source: <code>camera</code> for webcam or a path to an MP4 file.</p>
+</script>
