@@ -1,6 +1,7 @@
+
 # 🚀 node-red-contrib-hailo-detect
 
-Custom Node-RED nodes to interface with Hailo AI for object detection using Raspberry Pi and Hailo-8 accelerator.
+Custom Node-RED nodes to interface with Hailo AI for object detection and pose estimation using Raspberry Pi and Hailo-8 accelerator.
 
 ---
 
@@ -71,7 +72,7 @@ sudo systemctl restart nodered.service
 
 Use the `hailo-setup` node. This will install the necessary Python packages, Flask server, and set up the environment.
 
-> 🔁 Run this once before using the detection node.
+> 🔁 Run this once before using the detection or pose nodes.
 
 ---
 
@@ -90,9 +91,21 @@ This node runs the detection and launches a Flask video stream.
 
 ---
 
-### 3️⃣ View Live Stream in Dashboard
+### 3️⃣ Estimate Pose
 
-Use a **`ui-template`** node and paste the following code (update with your Pi’s IP):
+Use the `hailo-pose` node.
+
+- `Model (.hef) path`: Path to the Hailo model
+- `Input source`: 
+  - Use `"camera"` for webcam 
+  - Or provide a path to an `.mp4` file
+
+
+---
+
+### 4️⃣ View Live Stream in Dashboard
+
+Use a **`ui-template`** node and paste the following code (replace `your-pi-ip` with your Raspberry Pi’s IP):
 
 ```html
 <div style="text-align: center;">
@@ -105,7 +118,7 @@ Use a **`ui-template`** node and paste the following code (update with your Pi�
 </div>
 ```
 
-✅ This will show the video stream and allow users to stop detection via a button.
+✅ This will show the live video stream and allow users to stop the inference session.
 
 ---
 
@@ -113,5 +126,7 @@ Use a **`ui-template`** node and paste the following code (update with your Pi�
 
 - **`hailo-setup`** — Install required dependencies and set up the environment.
 - **`hailo-detect`** — Run object detection using Hailo model and input.
+- **`hailo-pose`** — Perform real-time pose estimation from webcam or video file.
 
+---
 
