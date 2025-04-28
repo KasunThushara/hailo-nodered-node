@@ -8,7 +8,9 @@
     "nodes": {
       "hailo-detect": "hailo-detect.js",
       "hailo-setup": "hailo-setup.js",
-      "hailo-pose": "hailo-pose.js"
+      "hailo-pose": "hailo-pose.js",
+      "hailo-face-landmark": "face_landmark_detect.js",
+      "hailo-hand-landmark": "hand_landmark_detect.js"
       
       
     }
